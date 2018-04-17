@@ -16,6 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
+//http://php.net/manual/zh/errorfunc.constants.php
 static void process_event_error(int type, char * error_filename, uint error_lineno, char * msg TSRMLS_DC)
 {
     char *event_str;
@@ -31,7 +32,6 @@ static void process_event_error(int type, char * error_filename, uint error_line
     php_printf("event_str:%s", event_str);
 
     mdm_real_log_ex(event_str, event_str_len TSRMLS_CC);
-    //seaslog_log_ex(1, SEASLOG_CRITICAL, SEASLOG_CRITICAL_INT, event_str, event_str_len, NULL, 0, seaslog_ce TSRMLS_CC);
     efree(event_str);
 
     // MDM_G(in_error) = 0;
