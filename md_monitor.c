@@ -40,14 +40,14 @@ static int le_md_monitor;
  */
 PHP_INI_BEGIN()
 
-STD_PHP_INI_ENTRY("md_monitor.type", "0", PHP_INI_ALL, OnUpdateLongGEZero, type, zend_md_monitor_globals, md_monitor_globals)
+STD_PHP_INI_ENTRY("md_monitor.type", "1", PHP_INI_ALL, OnUpdateLongGEZero, type, zend_md_monitor_globals, md_monitor_globals)
 
 STD_PHP_INI_ENTRY("md_monitor.save_dir", "/var/log/www", PHP_INI_ALL, OnUpdateString, save_dir, zend_md_monitor_globals, md_monitor_globals)
 STD_PHP_INI_ENTRY("md_monitor.save_filename", "default", PHP_INI_ALL, OnUpdateString, save_filename, zend_md_monitor_globals, md_monitor_globals)
 
 
 STD_PHP_INI_ENTRY("md_monitor.remote_host", "127.0.0.1", PHP_INI_ALL, OnUpdateString, remote_host, zend_md_monitor_globals, md_monitor_globals)
-STD_PHP_INI_ENTRY("md_monitor.remote_port", "1024", PHP_INI_ALL, OnUpdateString, remote_port, zend_md_monitor_globals, md_monitor_globals)
+STD_PHP_INI_ENTRY("md_monitor.remote_port", "1024", PHP_INI_ALL, OnUpdateLongGEZero, remote_port, zend_md_monitor_globals, md_monitor_globals)
 
 STD_PHP_INI_ENTRY("md_monitor.request_showlog_timeout", "3", PHP_INI_ALL, OnUpdateLongGEZero, request_showlog_timeout, zend_md_monitor_globals, md_monitor_globals)
 

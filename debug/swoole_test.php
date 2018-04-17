@@ -6,7 +6,7 @@ $server->on('connect', function ($server, $fd) {
 });
 $server->on('receive', function ($server, $fd, $reactor_id, $data) {
     //$server->send($fd, "Swoole: {$data}");
-    echo $data;
+    echo($data."\n");
     $server->close($fd);
 });
 $server->on('close', function ($server, $fd) {
